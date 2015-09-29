@@ -1,0 +1,41 @@
+// Input 
+
+$input-color: #B955E3;
+
+.signup-username {
+  font-family: $font-stack;
+  border: none;
+  outline: 0;
+  background: none;
+  display: block;
+  font-size: 18px;
+  color: white;
+  border-bottom: 1px solid $input-color;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin: auto;
+  width: 260px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+}
+
+@mixin placeholder {
+  color: $input-color;
+  font-weight: 100;
+}
+
+.signup-username::-webkit-input-placeholder {
+  @include placeholder;
+}
+
+.signup-username:-moz-placeholder { /* Firefox 18- */
+  @include placeholder;
+}
+
+.signup-username::-moz-placeholder {  /* Firefox 19+ */
+  @include placeholder;
+}
+
+.signup-username:-ms-input-placeholder {  
+  @include placeholder;
+}

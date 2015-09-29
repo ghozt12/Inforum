@@ -5,7 +5,41 @@ var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
 
+/* ********************************
+  Variables
+******************************** */
 var _store;
+
+var searchVisibility = false;
+var curMenu = 0;
+var preMenu = 3;
+
+var userName;
+var sectionColor;
+var currentArticle;
+var currentKey = 3;
+
+
+/* ********************************
+  Fake Database
+******************************** */
+
+
+/* ********************************
+  FUNCTIONS
+******************************** */
+
+function setSearchVisibility(val) {
+  searchVisibility = val;
+}
+function pushMenu(val) {
+  curMenu = val;
+}
+
+function pushPreMenu(val) {
+  preMenu = val;
+}
+
 
 var _store = [
   {
@@ -29,10 +63,6 @@ var _store = [
 ];
 
 // Variables
-var userName;
-var sectionColor;
-var currentArticle;
-var currentKey = 3;
 
 // Functions
 function setUserName(username) {
@@ -65,6 +95,19 @@ function createStory(title, text, tags, link) {
 }
 
 var InforumStore = assign({}, EventEmitter.prototype, {
+
+
+  getSearchVisibility: function() {
+    return searchVisibility;
+  },
+
+  getCurMenu: function() {
+    return curMenu;
+  },
+
+  getPreMenu: function() {
+    return preMenu;
+  },
 
   getStoreArray: function() {
     return _store;
@@ -101,6 +144,18 @@ AppDispatcher.register(function(action) {
 
   switch(action.actionType) {
 
+     case Constants.PUSH_MENU:
+      pushMenu(action.text);
+      InforumStore.emitChange();
+      break;
+    case Constants.PUSH_PRE_MENU:
+      pushPreMenu(action.text);
+      InforumStore.emitChange();
+      break;
+    case Constants.SET_SEARCH_VISIBILITY:
+      setSearchVisibility(action.text);
+      InforumStore.emitChange();
+      break;
     case Constants.SET_USER_NAME:
       setUserName(action.text);
       InforumStore.emitChange();

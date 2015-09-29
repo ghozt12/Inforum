@@ -1,0 +1,38 @@
+#menu {
+  display: inline-block;
+  height: 20px;
+  width: 50px;
+  position: absolute;
+  cursor: pointer;
+  top: 25px;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .1s ease-in-out;
+  -o-transition: .1s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+#menu span {
+  position: absolute;
+  background-color: white;
+  display: block;
+  height: 1px;
+  width: 18px;
+  border-radius: 20px;
+  /* Transitions */
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+#menu span:nth-child(1) {
+  top:0px;
+}
+
+#menu span:nth-child(2) {
+  top:8px;
+}

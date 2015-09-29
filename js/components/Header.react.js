@@ -1,25 +1,53 @@
+/* Top Level React Component */
 var React = require('react');
+
+// Routing
+var Router = require('react-router-component');
+var RouteHandler = Router.RouteHandler;
+var Link = Router.Link;
+var Navigatable = require('react-router-component').NavigatableMixin;
+
+// Flux
+var Actions = require('../actions/Actions');
 
 var Header = React.createClass({
 
-	render: function() {
-		// Grab the user name
-		var user = this.props.user;
-		var showHeader = "text-inforum-username fa fa-check";
-		this.props.showHeader ? '' : showHeader = '';
+  getInitialState: function() {
+    return {
+      visible: false
+    }
+  },
 
-		return (
-			<div className="top-bar-sections">
-				<h1 className="text-inforum-header"> inforum </h1>
-				<h1 className="text-inforum-username"> {user} </h1>
-				<i onClick={this._clickHandler} className={showHeader}></i>
-			</div>
-		);
-	},
+  render: function() {
+    return (
+      <div>
+        <div className="grid wrap">
+        <div className="unit whole">
+        <div className="top-bar">
+          <div onClick={this._handleClick} id="menu">
+          <span></span>
+          <span></span>
+          </div>
+        <h1>Inforum</h1>
+        <i onClick={this._handleSearch} className="fa fa-search"></i>
+        </div>
+        </div>
+        </div>
+      </div>
+    );
+  },
 
-	_clickHandler: function(event) {
-		this.props.headerClick();
-	}
+  _handleClick: function(event) {
+    alert("Menu");
+  },
+
+  _handleSearch: function() {
+    Actions.showSearch(!this.state.visible);
+
+    this.setState({
+      visible: !this.state.visible 
+    });
+  }
 
 });
 

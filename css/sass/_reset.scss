@@ -1,9 +1,4 @@
-/* Respectfully created by:
-	(Type your name below if you edit this file)
-
-	Rhain
-*/
-
+// CSS RESET
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,37 +42,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
-li {
-	display: block;
-}
-input {
-	display: inline-block;
-}
-.element input {
-	display: inline-block;
-}
-button {
-	display: inline-block;
-}
-
-
-
-/* ***** START PAGE ***** */
-/* Respect */
-
-body {
-	background: #ECF0F1;
-}
-
-.text-inforum-large {
-	font-family: 'Roboto';
-	color: black;
-	font-size: 36px;
-	font-weight: bold;
-	text-align: center;
-	padding-top: 50px;
-	color: #7F8C8D;
-}
-

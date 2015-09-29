@@ -1,0 +1,52 @@
+.nav-bottom {
+    height: 2px;
+    background: $wisteria;
+    width: 25%;
+    margin-bottom: 10px;
+    transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+  }
+
+.nav-bottom.nav1 {
+  margin-left: 0%;
+}
+.nav-bottom.nav2 {
+  margin-left: 25%;
+}
+.nav-bottom.nav3 {
+  margin-left: 50%;
+}
+.nav-bottom.nav4 {
+  margin-left: 75%;
+}
+
+
+  nav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ABABAB;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  nav li {
+    cursor: pointer;
+    width: 24%;
+    list-style-type: none;
+    display: inline-block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .selected-nav {
+    color: $wisteria;
+  }

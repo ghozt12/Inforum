@@ -9,7 +9,7 @@ var NotFound = React.createClass({
         return (
         	<div>
             <Link href="/search">user page</Link>
-        	NOT FOUND
+        	PAGE NOT FOUND
         	</div>
         );
     }

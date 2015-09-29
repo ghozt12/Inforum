@@ -1,0 +1,43 @@
+// Circle loader
+
+.loader-text {
+  font-family: 'Helvetica Neue';
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  position: absolute;
+  font-size: 24px;
+  color: white;
+  top: calc(42vh - 24px);
+  left: calc(50vw - 50px);
+  width: 100px;
+  text-align: center;
+}
+
+.loader {
+  position: absolute;
+  top: calc(50vh - 25px);
+  left: calc(50vw - 25px);
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  border-left: 3px solid rgba(0, 0, 0, 0);
+  border-right: 3px solid rgba(0, 0, 0, 0);
+  border-top: 3px solid white;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: rot .9s infinite ;
+  -moz-animation: rot .9s infinite ;
+  animation: rot .9s infinite ;
+  transition: 1s;
+}
+
+@keyframes rot {
+  10% {transform: rotate(20deg);}
+  90% {transform: rotate(355deg);}
+  100% {transform: rotate(359deg);}
+}
+
+@-webkit-keyframes rot {
+  10% {transform: rotate(20deg);}
+  90% {transform: rotate(355deg);}
+  100% {-webkit-transform: rotate(359deg);}
+}

@@ -1,6 +1,9 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
+  PUSH_MENU: null,
+  PUSH_PRE_MENU: null,
+  SET_SEARCH_VISIBILITY: null,
   SET_USER_NAME: null,
   SET_THEME: null,
   RESET_ARTICLE: null,

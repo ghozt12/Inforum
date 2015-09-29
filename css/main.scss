@@ -1,0 +1,164 @@
+// Inforum style sheet
+
+// Resets all css so it looks the same cross-browser
+@import 'sass/reset'; 
+
+/* **********************a
+Colours 
+********************** */
+// Greys
+$clouds: #ECF0F1; // light grey
+$silver: #bdc3c7; // darker grey 
+$concrete: #95a5a6; // even darker grey
+$abestos: #7f8c8d; // darkest grey
+
+// LIGHT Colourful colours 
+$amethest: #9B59B6;
+$lightblue : #00ACEF; // light blue 
+$light-pink: #B955E3;
+
+
+// DARK colourful colours 
+$nephitis :#27ae60; // dark green
+$pumkin: #d35400; // dark orange
+$orange: #f39c12; // orange
+$midnight-blue: #2c3e50; // dark navyish
+$wisteria :#8e44ad; // dark purple
+$belieze-hole: #2980b9; // dark blue
+$green-sea: #16a085; // dark green
+
+/* **********************
+Font stack 
+********************** */
+$font-stack: 'Helvetica Neue';
+
+/* **********************
+Imported SASS style sheets
+********************** */
+// Loading circle
+@import 'sass/loadingcircle'; 
+@import 'sass/button'; 
+@import 'sass/input'; 
+@import 'sass/categories'; 
+@import 'sass/menu'; 
+@import 'sass/action'; 
+@import 'sass/nav'; 
+
+
+html, body {
+	background: $wisteria;
+	font-family: $font-stack;
+}
+
+.red-background {
+	background: $wisteria;
+	height: 100%;
+}
+
+
+/* **********************
+Text
+********************** */
+.main-title {
+	font-family: $font-stack;
+
+	font-size: 48px;
+	color: white;
+	text-align: center;
+	font-weight: 100;
+	margin-top: 80px;
+
+	margin-bottom: 10px;
+}
+
+.main-second {
+	font-family: $font-stack;
+
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	font-weight: 200;
+
+	margin-bottom: 50px;
+	line-height: 24px;
+}
+
+.main-copyright {
+	font-family: $font-stack;
+	font-size: 12px;
+	position: absolute;
+	color: white;
+	opacity: 0.6;
+	bottom: 0;
+	width: 100%;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.main-fbswitch {
+	color: $light-pink;
+	text-align: center;
+	font-size: 12px;
+}
+
+
+/* ***********************
+	MISC
+************************ */
+.top-bar {
+	height: 40px;
+	h1 {
+		text-align: center;
+		color: white;
+		font-weight: 100;
+		letter-spacing: 2px;
+		padding-top: 10px;
+	}
+
+	i {
+		position: absolute;
+		right: 20px;
+		top: 22px;
+		color: white;
+		cursor: pointer;
+	}
+}
+
+.search {
+	width: 100%;
+	outline: 0;
+	background: none;
+	border: 0;
+	height: 30px;
+	font-size: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #4a4a4a;
+	transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+  opacity: 1;
+}
+
+.search.hidden {
+	opacity: 0;
+	display: none;
+	
+	transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+}
+.facebook-profile {
+	border-radius: 50%;
+	border: 2px solid white;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .example-appear {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+}

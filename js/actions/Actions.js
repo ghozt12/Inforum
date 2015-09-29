@@ -3,6 +3,27 @@ var Constants = require('../constants/Constants');
 
 var Actions = {
 
+  pushMenu: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.PUSH_MENU,
+      text: val
+    });
+  },
+
+  pushPrevMenu: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.PUSH_PRE_MENU,
+      text: val
+    });
+  },
+
+  showSearch: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.SET_SEARCH_VISIBILITY,
+      text: val
+    });
+  },
+
 	setUserName: function(userName) {
 		AppDispatcher.dispatch({
       		actionType: Constants.SET_USER_NAME,

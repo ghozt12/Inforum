@@ -42,6 +42,8 @@ var SigninFB = React.createClass({
           image: image
         });
 
+        Actions.pushUserInfo(user, image);
+
 
       }
     }.bind(this));
@@ -60,7 +62,7 @@ var SigninFB = React.createClass({
         <img className="facebook-profile" src={this.state.image} />
         <br />
         <br />  
-        <button className="button-login">Continue as {this.state.username}</button>
+        <button onClick={this._handleClick} className="button-login">Continue as {this.state.username}</button>
         <p className="main-fbswitch"> Switch Account </p>
       </div>
       );
@@ -73,7 +75,6 @@ var SigninFB = React.createClass({
           <div className="unit whole">
             <h1 className="main-title">Inforum</h1>
             <h2 className="main-second">A social news aggregation app that connects you with the latest stories</h2>
-
             
             {con}
 
@@ -82,6 +83,11 @@ var SigninFB = React.createClass({
           <p className="main-copyright"> By using Inforum, you agree to the Terms, Cookie Policy and Privacy Policy.</p>
       </div>
       );
+  },
+
+  _handleClick: function() {
+    // Send data to Store
+    this.navigate('/catogories');
   }
 
 });

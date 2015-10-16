@@ -1,6 +1,9 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
+  PUSH_BOOKMARK: null,
+  USER: null,
+  PUSH_CAT: null,
   PUSH_MENU: null,
   PUSH_PRE_MENU: null,
   SET_SEARCH_VISIBILITY: null,

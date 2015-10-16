@@ -6,6 +6,18 @@
 /* **********************a
 Colours 
 ********************** */
+
+
+// New colours
+$red: #D73E2E;
+$blue: #2980b9;
+$green: #27ae60;
+$orange: #E67E22;
+$pink: #B955E3;
+$purple: #8e44ad;
+$lightblue: #1ABC9C;
+$yellow: #F1C40F;
+
 // Greys
 $clouds: #ECF0F1; // light grey
 $silver: #bdc3c7; // darker grey 
@@ -43,15 +55,16 @@ Imported SASS style sheets
 @import 'sass/menu'; 
 @import 'sass/action'; 
 @import 'sass/nav'; 
+@import 'sass/story'; 
 
 
 html, body {
-	background: $wisteria;
+	background: #181617;
 	font-family: $font-stack;
 }
 
 .red-background {
-	background: $wisteria;
+	background: #2F2F2F;
 	height: 100%;
 }
 
@@ -106,19 +119,22 @@ Text
 	MISC
 ************************ */
 .top-bar {
-	height: 40px;
+	height: 76px;
+
 	h1 {
-		text-align: center;
+		padding-left: 55px;
 		color: white;
-		font-weight: 100;
+		font-weight: 600;
 		letter-spacing: 2px;
 		padding-top: 10px;
+		font-size: 22px;
+		margin-top: -2px;
 	}
 
 	i {
 		position: absolute;
 		right: 20px;
-		top: 22px;
+		top: 10px;
 		color: white;
 		cursor: pointer;
 	}
@@ -161,4 +177,75 @@ Text
 
 .example-appear.example-appear-active {
   opacity: 1;
+}
+
+
+.side-menu {
+	height: 100vh;
+	position: fixed;
+	width: 300px;
+	background: #565656;
+	-webkit-transition: .4s ease-in-out;
+	color: white;
+	z-index: 5000;
+
+
+	.part1 {
+		position: relative;
+		top: 0;
+		height: 200px;
+		background: #2F2F2F!important;
+		
+
+		
+		h2 {
+			padding-left: 30px;
+			// User name
+			font-size: 20px;
+			font-weight: 700;
+			padding-top: 15px;
+			padding-bottom: 20px;
+		}
+
+
+		img {
+			margin-top: 30px;
+			margin-left: 30px;
+			background: #2F2F2F!important;
+			border-radius: 100%;
+		}
+	}
+
+	
+
+	ul {
+			padding-left: 20px;
+			padding-top: 30px;
+
+		li {
+			font-weight: 200;
+			font-size: 20px;
+			margin-bottom: 15px;
+		}
+
+		li:nth-child(3) {
+			padding-bottom: 10px;
+			border-bottom: 1px solid #4a4a4a;
+			
+		}
+
+		li:nth-child(5) {
+			padding-bottom: 10px;
+			border-bottom: 1px solid #4a4a4a;
+		}
+	}
+
+}
+
+.side-menu.hide {
+	 -webkit-transform: translate3d(-330px, 0, 0);
+}
+
+.side-menu.show {
+	-webkit-transform: translate3d(0px, 0, 0);
 }

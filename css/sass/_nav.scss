@@ -1,11 +1,57 @@
+/* ************************
+  Navigation 
+  w slider
+************************ */
+
+nav {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #ABABAB;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+nav li {
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: -0.4px;
+  width: 25%;
+  list-style-type: none;
+  display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+  text-align: center;
+
+}
+
+.selected-nav {
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
 .nav-bottom {
-    height: 2px;
-    background: $wisteria;
-    width: 25%;
-    margin-bottom: 10px;
-    transition: .4s ease-in-out;
-    -webkit-transition: .4s ease-in-out;
-  }
+  height: 5px;
+  background: $red;
+  width: 25%;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+}
 
 .nav-bottom.nav1 {
   margin-left: 0%;
@@ -19,34 +65,3 @@
 .nav-bottom.nav4 {
   margin-left: 75%;
 }
-
-
-  nav {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5px;
-    color: #ABABAB;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  nav li {
-    cursor: pointer;
-    width: 24%;
-    list-style-type: none;
-    display: inline-block;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  .selected-nav {
-    color: $wisteria;
-  }

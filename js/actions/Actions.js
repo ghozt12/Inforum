@@ -3,6 +3,29 @@ var Constants = require('../constants/Constants');
 
 var Actions = {
 
+  pushUserInfo: function(name, img) {
+    AppDispatcher.dispatch({
+          actionType: Constants.USER,
+          name: name,
+          img: img
+      });
+  },
+
+  pushBookmark: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.PUSH_BOOKMARK,
+      text: val
+    });
+
+  },
+
+  pushCatogory: function(val) {
+  AppDispatcher.dispatch({
+      actionType: Constants.PUSH_CAT,
+      text: val
+    });
+  },
+
   pushMenu: function(val) {
     AppDispatcher.dispatch({
       actionType: Constants.PUSH_MENU,

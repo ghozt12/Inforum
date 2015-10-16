@@ -1,0 +1,163 @@
+
+.element {
+  cursor: pointer;
+  background: #242E3A;
+  height: 150px;
+  color: white;
+  font-size: 12px;
+  font-weight: 300;
+  position: relative;
+  width: 100vw;
+
+  p {
+    width: 95%;
+    margin: auto;
+    opacity: 0.9;
+    letter-spacing: 1.2px;
+    word-spacing: 2px;
+    line-height: 16px;
+  }
+
+  .bookmark {
+
+    i {
+        position: relative;
+        left: 90%;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+    i.red {
+      color: $red;
+    }
+    i.blue {
+      color: $blue;
+    }
+    i.green {
+      color: $green;
+    }
+    i.orange {
+      color: $orange;
+    }
+    i.ipink {
+      color: $pink;
+    }
+    i.purple {
+      color: $purple;
+    }
+    i.lightblue {
+      color: $lightblue;
+    }
+    i.yellow {
+      color: $yellow;
+    }
+  }
+
+   
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    margin-top: 20px;
+    width: 90%;
+
+    .bottom-cat {position: absolute;
+      width: 30px;
+      display: inline-block;
+      bottom: 0;
+      font-size: 12px;
+      font-weight: 700;
+      padding-top: 8px;
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-bottom: 8px;
+      text-align: center;
+
+    }
+
+    .bottom-cat.red {
+      background: $red;
+    }
+    .bottom-cat.blue {
+      background: $blue;
+    }
+    .bottom-cat.green {
+      background: $green;
+    }
+    .bottom-cat.orange {
+      background: $orange;
+    }
+    .bottom-cat.pink {
+      background: $pink;
+    }
+    .bottom-cat.purple {
+      background: $purple;
+    }
+    .bottom-cat.lightblue {
+      background: $lightblue;
+    }
+    .bottom-cat.yellow {
+      background: $yellow;
+    }
+
+    
+    p {
+      display: inline-block;
+    }
+
+    .aa.red {
+        color: $red;
+      }
+      .aa.blue {
+        color: $blue;
+      }
+      .aa.green {
+        color: $green;
+      }
+      .aa.orange {
+        color: $orange;
+      }
+      .aa.pink {
+        color: $pink;
+      }
+      .aa.purple {
+        color: $purple;
+      }
+      .aa.lightblue {
+        color: $lightblue;
+      }
+      .aa.yellow {
+        color: $yellow;
+      }
+    
+    .aa {
+
+      display: inline-block!important;
+      padding-left: 50px;
+      padding-bottom: 10px;
+
+      b {
+        color: #DDD;
+      }
+      
+    }
+
+    i {
+      padding-right: 5px;
+      display: inline-block;
+      margin-right: 2px;
+      float: right;
+    }
+  }
+
+}
+
+.bookmarked {
+  font-size: 15px;
+  color: #DDD;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+

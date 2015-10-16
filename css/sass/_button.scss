@@ -1,7 +1,7 @@
 // Buttons
 
 // Sign in with Facebook or Email
-.button-login {
+button {
   margin: auto;
   display: block;
 
@@ -18,7 +18,7 @@
 }
 
 .button-signup {
-  @extend .button-login;
+  @extend button;
 
   background: none;
   border: 2px solid white;

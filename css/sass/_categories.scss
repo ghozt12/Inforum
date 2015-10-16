@@ -1,5 +1,5 @@
 $height: calc((100vh - 100px) / 4);
-$text-pos: calc(((100vh - 100px) / 4) - 25px);
+$text-pos: calc(($height / 2));
 
 @mixin all {
   display: inline-block;
@@ -10,35 +10,48 @@ $text-pos: calc(((100vh - 100px) / 4) - 25px);
 
   p {
     position: relative;
-    top: $text-pos;
+    top: calc(50% - 15px);
     color: white;
     font-size: 15px;
     font-weight: 800;
     padding: 5px;
     padding-left: 10px;
-    background: black;
-    opacity: .6;
+    border: 4px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
   }
 }
 
 @mixin sixtyfive {
   @include all;
   width: 65%;
+  
 }
 
 @mixin thirtythree {
   @include all;
   width: 33%;
+  p {
+    width: 80%;
+  }
 }
 
 @mixin hundered {
   @include all;
   width: 99%;
+  p {
+    width: 50%;
+  }
 }
 
 .categories {
   height: 100%;
-  background: #fff;
+  background: #4a4a4a;
+  padding-top: 5px;
 
   ul li {
     margin: 1px;
@@ -47,48 +60,86 @@ $text-pos: calc(((100vh - 100px) / 4) - 25px);
   // 1 Enviroment 
   ul li:nth-child(1) {
     @include sixtyfive;
-    background: url('../assets/enviroment.jpg') no-repeat center;
+    background: linear-gradient(
+      rgba(255, 0, 0, 0.45), 
+      rgba(255, 0, 0, 0.45)
+    ), url('../assets/enviroment.jpg') no-repeat center;
+    p {
+      width: 55%;
+    }
   }
 
   // 2 Sport
   ul li:nth-child(2) {
     @include thirtythree;
-    background: url('../assets/sport.jpg') no-repeat center;
-
+    background: linear-gradient(
+      rgba(210, 135, 69, 0.45), 
+      rgba(210, 135, 69, 0.45)
+    ), url('../assets/sport.jpg') no-repeat center;
+    p {
+      width: 55%;
+    }
   }
 
   // 3 Science
   ul li:nth-child(3) {
    @include thirtythree;
-   background: url('../assets/science.jpg') no-repeat center;
+   background: linear-gradient(
+      rgba(173, 145, 44, 0.7), 
+      rgba(137, 145, 44, 0.7)
+    ), url('../assets/science.jpg') no-repeat center;
+   p {
+     width: 70%;
+   }
   }
 
   // 4 Business
   ul li:nth-child(4) {
     @include sixtyfive;
-    background: url('../assets/business.jpg') no-repeat center;
-
+    background: linear-gradient(
+      rgba(47, 108, 67, 0.45), 
+      rgba(47, 108, 67, 0.45)
+    ), url('../assets/business.jpg') no-repeat center;
+    p {
+     width: 45%;
+    }
   }
 
   // 5 Politics
   ul li:nth-child(5) {
     @include hundered;
-    background: url('../assets/politics.jpg') no-repeat center;
-
+    background: linear-gradient(
+      rgba(93, 56, 110, 0.45), 
+      rgba(93, 56, 110, 0.45)
+    ), url('../assets/politics.jpg') no-repeat center;
+    p {
+     width: 25%;
+    }
   }
 
   // 6 Culture
   ul li:nth-child(6) {
     @include thirtythree;
-    background: url('../assets/entertainment.jpg') no-repeat center;
+    background: linear-gradient(
+      rgba(25, 91, 141, 0.45), 
+      rgba(25, 91, 141, 0.45)
+    ), url('../assets/entertainment.jpg') no-repeat center;
+    p {
+     width: 70%;
+    }
   }
 
   // 7 Entertainment
   ul li:nth-child(7) {
     @include sixtyfive;
-    background: url('../assets/culture.jpg') no-repeat center;
+    background: linear-gradient(
+      rgba(136, 189, 195, 0.45), 
+      rgba(136, 189, 195, 0.45)
+    ), url('../assets/culture.jpg') no-repeat center;
+    p {
+     width: 40%;
+    }
   }
 
 
 }
-

@@ -9,15 +9,7 @@ var NotFound = Router.NotFound;
 var Signin = require('./components/Signin.page');
 var SigninEmail = require('./components/SigninEmail.page');
 var SigninFB = require('./components/SigninFB.page');
-var Catogories = require('./components/Categories.page');
-
-var Inforum = require('./components/Inforum.react');
-var Header = require('./components/Header.react');
-var Sections = require('./components/Sections.page');
-var Stories = require('./components/Stories.page');
-var Story = require('./components/Story.page');
-var Create = require('./components/Create.page');
-var NotFoundPage = require('./components/NotFound.page');
+var Catogories = require('./components/Pages/Categories.page');
 
 // FLux
 var InforumStore = require('./stores/InforumStore');
@@ -83,6 +75,20 @@ var App = React.createClass({
     return InforumStore.getPreMenu();
   },
 
+  _getEnviroment: function() {
+    return InforumStore.getEnviroment();
+  }, 
+
+  _getBookmarks: function() {
+    return InforumStore.getBookmarks();
+  }, 
+  _getName: function() {
+    return InforumStore.getName();
+  }, 
+  _getImg: function() {
+    return InforumStore.getImg();
+  },  
+
   render: function() {
 
     var searchVisibility = this._getSearchVisibility;
@@ -93,17 +99,29 @@ var App = React.createClass({
   	var array = this._getArray;
   	var article = this._getArticle;
 
+    // User info 
+    var name = this._getName;
+    var img = this._getImg;
+
+
+    // Databases (select one depending on catogory)
+    var DBenviroment = this._getEnviroment;
+    var Bookmarks = this._getBookmarks;
+
     return (
     <AnimatedLocations hash className="Main" transitionName="moveUp" popStateTransitionName="fade">
         <Location path="/" handler={Signin} />
         <Location path="/signin-email" handler={SigninEmail} />
         <Location path="/signin-fb" handler={SigninFB} />
-        <Location path="/catogories" preMenu={preMenu} curMenu={curMenu} search={searchVisibility} handler={Catogories} />
-
-        <Location user={user} path="/sections" handler={Sections} />
-        <Location array={array} colour={col} path="/stories" handler={Stories} />
-        <Location article={article} path="/story" handler={Story} />
-        <Location path="/create" handler={Create} />
+        <Location path="/catogories" 
+        name={name}
+        img={img}
+        db1={DBenviroment} 
+        db_bm={Bookmarks} 
+        preMenu={preMenu} 
+        curMenu={curMenu} 
+        search={searchVisibility} 
+        handler={Catogories} />
      </AnimatedLocations>    
      );
   }

@@ -14,17 +14,26 @@ var Actions = require('../../actions/Actions');
 
 var Bookmark = require('./Bookmark.react');
 var Bottom = require('./Bottom.react');
+var Social = require('./Social.react');
 
 /* ****************************
   React
 **************************** */
 var Storyelement = React.createClass({
-  render: function() {
+  
+  getInitialState: function() {
+    return {
+      going: false,
+      visible: false
+    };
+  },
 
+  render: function() {
     return (
-      <div className='element'>
+      <div onClick={this._touchStart} onTouchStart={this._touchStart} onTouchEnd={this._touchend} className='element'>
+        <Social catNum={this.props.catNum} visible={this.state.visible} />
         <Bookmark _handleBookmark={this._handleBookmark} catNum={this.props.catNum} bookmarked={this.props.bookmarked} />
-        <p >{this.props.story}</p>
+        <p onTouchStart={this._close}>{this.props.story}</p>
         <Bottom 
           catNum={this.props.catNum}
           cat={this.props.cat}
@@ -35,6 +44,44 @@ var Storyelement = React.createClass({
           />
       </div>
     );
+  },
+
+  _close: function() {
+    if (this.state.visible) {
+      this.setState({
+        visible: false
+      });
+    }
+  },
+
+  _touchStart: function() {
+    if (!this.state.visible) {
+      this.setState({
+        going: true 
+      });
+      var timer = setTimeout(this._checkEnd, 1000);
+    }
+  },
+
+  _checkEnd: function() {
+    if (this.state.going) {
+      this.setState({
+        visible: !this.state.visible,
+        going: false
+      });
+    }
+  },
+
+  _touchend: function() {
+    this.setState({
+      going: false 
+    });
+  },
+
+  _social: function() {
+    this.setState({
+      visible: !this.state.visible
+    });
   },
 
   _handleBookmark: function(bm) {

@@ -13,6 +13,23 @@
   z-index: 5001;
 }
 
+.reddot {
+  border-radius: 50%;
+  background-color: red;
+  height: 15px;
+  width: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  position: absolute;
+  left: 35px;
+  top: 10px;
+  p {
+    margin-top: 1px;
+  }
+} 
+
 #menu span {
   position: absolute;
   background-color: white;
@@ -52,4 +69,20 @@
   -moz-transform: rotateZ(45deg) translate3d(0, 5.5px, 0);
   -o-transform: rotateZ(45deg) translate3d(0, 5.5px, 0);
   transform: rotateZ(45deg) translate3d(0, 5.5px, 0);
+}
+
+#arrow {
+  display: inline-block;
+  height: 20px;
+  width: 50px;
+  position: absolute;
+  cursor: pointer;
+  top: 3px;
+  left: 3px;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .1s ease-in-out;
+  -o-transition: .1s ease-in-out;
+  transition: .3s ease-in-out;
+  z-index: 5001;
+
 }

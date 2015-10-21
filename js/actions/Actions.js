@@ -11,6 +11,13 @@ var Actions = {
       });
   },
 
+  showSocial: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.SHOWSOCIAL,
+      text: val
+    });
+  },
+
   pushBookmark: function(val) {
     AppDispatcher.dispatch({
       actionType: Constants.PUSH_BOOKMARK,

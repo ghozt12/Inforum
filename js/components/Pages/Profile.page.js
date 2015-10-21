@@ -18,7 +18,10 @@ var BookmarksContainer = require('../Bookmarks/BookmarksContainer.react');
 var ChatsContainer = require('../Story/ChatsContainer.react');
 var SocialShow = require('../Pages/SocialShow.react');
 
-var Categories = React.createClass({
+var User = require('../Profile/User.react');
+
+
+var Profile = React.createClass({
   mixins: [ Navigatable ],
 
   render: function() {
@@ -28,6 +31,7 @@ var Categories = React.createClass({
     if (this.props.social()) {
       other = <SocialShow />
     }
+
 
     var pages = {
       0: <Catogory />,
@@ -46,13 +50,16 @@ var Categories = React.createClass({
 
       return (
         <div>
-          <Header isNav={true} isColoured={false} isDot={true}  titleName="Inforum" name={this.props.name} img={this.props.img} preMenu={this.props.preMenu} curMenu={this.props.curMenu} />
-          {other}
-          {rendering}
+
+          <Header isNav={false} isColoured={true} isArrow={true} isDot={false} titleName="My Inforum" name={this.props.name} img={this.props.img} preMenu={this.props.preMenu} curMenu={this.props.curMenu} />
+          <User img={this.props.img} />
+
+
+          HEHEHEHEHEH
         </div>
       );
   }
 
 });
 
-module.exports = Categories;
+module.exports = Profile;

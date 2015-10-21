@@ -5,6 +5,13 @@
   Respect Crew
 **************************** */
 
+// Nav
+var Router = require('react-router-component');
+var RouteHandler = Router.RouteHandler;
+var Link = Router.Link;
+var Navigatable = require('react-router-component').NavigatableMixin;
+
+
 /* ****************************
   Pages
 **************************** */
@@ -17,6 +24,7 @@ var Actions = require('../../actions/Actions');
   React
 **************************** */
 var Sidemenu = React.createClass({
+  mixins: [ Navigatable ],
 
   render: function() {
     // if visible, show it
@@ -37,7 +45,7 @@ var Sidemenu = React.createClass({
           <li>Home</li>
           <li>#hashtags</li>
           <li>Publications</li>
-          <li>Profile Stats</li>
+          <li onClick={this._handleClick} >Profile Stats</li>
           <li>Draft Stories</li>
           <li>Help</li>
           <li>Settings</li>
@@ -45,6 +53,11 @@ var Sidemenu = React.createClass({
         </ul>
       </div>
     );
+  },
+
+  _handleClick: function() {
+    alert(1);
+    this.navigate('/profile');
   }
 });
 

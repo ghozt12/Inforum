@@ -11,5 +11,6 @@ module.exports = keyMirror({
   SET_THEME: null,
   RESET_ARTICLE: null,
   SET_ARTICLE: null,
-  CREATE_STORY: null
+  CREATE_STORY: null,
+  SHOWSOCIAL: null
 });

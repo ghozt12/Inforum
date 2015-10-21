@@ -10,6 +10,8 @@ var Signin = require('./components/Signin.page');
 var SigninEmail = require('./components/SigninEmail.page');
 var SigninFB = require('./components/SigninFB.page');
 var Catogories = require('./components/Pages/Categories.page');
+var Profile = require('./components/Pages/Profile.page');
+
 
 // FLux
 var InforumStore = require('./stores/InforumStore');
@@ -77,7 +79,20 @@ var App = React.createClass({
 
   _getEnviroment: function() {
     return InforumStore.getEnviroment();
+  },
+  _getScience: function() {
+    return InforumStore.getScience();
+  },
+  _getSport: function() {
+    return InforumStore.getSport();
   }, 
+
+  _getBusiness: function() {
+    return InforumStore.getBusiness();
+  },
+  _getChats: function() {
+    return InforumStore.getChats();
+  },
 
   _getBookmarks: function() {
     return InforumStore.getBookmarks();
@@ -88,6 +103,9 @@ var App = React.createClass({
   _getImg: function() {
     return InforumStore.getImg();
   },  
+  _getSocial: function() {
+    return InforumStore.getSocial();
+  },
 
   render: function() {
 
@@ -98,14 +116,18 @@ var App = React.createClass({
   	var col = this._getSectionColor;
   	var array = this._getArray;
   	var article = this._getArticle;
+    var social = this._getSocial;
 
     // User info 
     var name = this._getName;
     var img = this._getImg;
 
-
     // Databases (select one depending on catogory)
     var DBenviroment = this._getEnviroment;
+    var DBScience = this._getScience;
+    var DBSport = this._getSport;
+    var DBBusiness = this._getBusiness;
+    var DBChats = this._getChats();
     var Bookmarks = this._getBookmarks;
 
     return (
@@ -116,12 +138,38 @@ var App = React.createClass({
         <Location path="/catogories" 
         name={name}
         img={img}
+        social={social}
+
         db1={DBenviroment} 
+        db2={DBScience} 
+        db3={DBSport} 
+        db4={DBBusiness} 
+        dbChats={DBChats} 
+
         db_bm={Bookmarks} 
         preMenu={preMenu} 
         curMenu={curMenu} 
         search={searchVisibility} 
         handler={Catogories} />
+
+        <Location path="/profile" 
+        name={name}
+        img={img}
+        social={social}
+
+        db1={DBenviroment} 
+        db2={DBScience} 
+        db3={DBSport} 
+        db4={DBBusiness} 
+        dbChats={DBChats} 
+
+        db_bm={Bookmarks} 
+        preMenu={preMenu} 
+        curMenu={curMenu} 
+        search={searchVisibility} 
+
+        handler={Profile} />
+
      </AnimatedLocations>    
      );
   }

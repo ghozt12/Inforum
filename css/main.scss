@@ -3,10 +3,9 @@
 // Resets all css so it looks the same cross-browser
 @import 'sass/reset'; 
 
-/* **********************a
+/* **********************
 Colours 
 ********************** */
-
 
 // New colours
 $red: #D73E2E;
@@ -56,11 +55,15 @@ Imported SASS style sheets
 @import 'sass/action'; 
 @import 'sass/nav'; 
 @import 'sass/story'; 
+@import 'sass/social'; 
+@import 'sass/profile'; 
 
 
 html, body {
 	background: #181617;
 	font-family: $font-stack;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 }
 
 .red-background {
@@ -118,6 +121,10 @@ Text
 /* ***********************
 	MISC
 ************************ */
+
+.top-bar.coloured {
+		background: #344D62;
+}
 .top-bar {
 	height: 76px;
 

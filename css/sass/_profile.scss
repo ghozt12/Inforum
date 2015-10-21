@@ -1,0 +1,31 @@
+.profile-cont {
+
+  background: #344D62;
+  height: 200px;
+  width: 100%;
+
+
+  img {
+    border-radius: 50%;
+  }
+
+  ul {
+    width:80%;
+    float: right;
+    margin-top: 20px;
+  }
+
+  ul li {
+    width: 30%;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+    text-align: right;
+  }
+
+  ul:nth-child(2) li {
+    text-align: right;
+    font-weight: 200;
+  }
+}

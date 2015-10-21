@@ -1,5 +1,11 @@
 
 .element {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: pointer;
   background: #242E3A;
   height: 150px;
@@ -8,6 +14,9 @@
   font-weight: 300;
   position: relative;
   width: 100vw;
+  overflow: hidden;
+
+  
 
   p {
     width: 95%;
@@ -18,14 +27,22 @@
     line-height: 16px;
   }
 
-  .bookmark {
+  
 
+}
+
+/* **************************
+  BOOKMARK 
+************************** */
+
+.element{
+  .bookmark {
     i {
         position: relative;
         left: 90%;
         font-size: 20px;
         cursor: pointer;
-      }
+    }
 
     i.red {
       color: $red;
@@ -52,13 +69,81 @@
       color: $yellow;
     }
   }
+}
+.bookmarked {
+  font-size: 15px;
+  color: #DDD;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
 
-   
+
+/* **************************
+  SOCIAL SIDE BAR 
+************************** */
+
+.element {
+  .social {
+    width: 80px;
+    height: 100%;
+    display: block;
+    right: 0;
+    position: absolute;
+    z-index: 20003;
+    transition: 0.2s ease-in-out;
+
+    i {
+      color: white;
+      padding-top: 40px;
+      padding-left: 27px;
+      font-size: 20px;
+      display: block;
+    }
+
+  }
+
+  .social.red {
+    background: $red;
+  }
+  .social.blue {
+    background: $blue;
+  }
+  .social.green {
+    background: $green;
+  }
+  .social.orange {
+    background: $orange;
+  }
+  .social.pink {
+    background: $pink;
+  }
+  .social.purple {
+    background: $purple;
+  }
+  .social.lightblue {
+    background: $lightblue;
+  }
+  .social.yellow {
+    background: $yellow;
+  } 
+
+  .social.hidden {
+      right: -80px;
+
+  }
+}
+
+/* **************************
+  BOTTOM BAR 
+************************** */
+.element {
   .bottom-bar {
     position: absolute;
     bottom: 0;
     margin-top: 20px;
     width: 90%;
+    font-size: 12px!important;
 
     .bottom-cat {position: absolute;
       width: 30px;
@@ -102,35 +187,43 @@
     
     p {
       display: inline-block;
+      font-size: 12px!important;
     }
 
     .aa.red {
         color: $red;
+        font-size: 12px!important;
       }
       .aa.blue {
         color: $blue;
+        font-size: 12px!important;
       }
       .aa.green {
         color: $green;
+        font-size: 12px!important;
       }
       .aa.orange {
         color: $orange;
+        font-size: 12px!important;
       }
       .aa.pink {
         color: $pink;
+        font-size: 12px!important;
       }
       .aa.purple {
         color: $purple;
+        font-size: 12px!important;
       }
       .aa.lightblue {
         color: $lightblue;
+        font-size: 12px!important;
       }
       .aa.yellow {
         color: $yellow;
+        font-size: 12px!important;
       }
     
     .aa {
-
       display: inline-block!important;
       padding-left: 50px;
       padding-bottom: 10px;
@@ -142,22 +235,11 @@
     }
 
     i {
-      padding-right: 5px;
+      font-size: 12px!important;
+      padding-right: 5px!important;
       display: inline-block;
       margin-right: 2px;
       float: right;
     }
   }
-
 }
-
-.bookmarked {
-  font-size: 15px;
-  color: #DDD;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 20px;
-}
-
-
-

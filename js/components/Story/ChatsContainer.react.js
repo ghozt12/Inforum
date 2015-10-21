@@ -20,38 +20,17 @@ var Bottom = require('./Bottom.react');
 /* ****************************
   React
 **************************** */
-var StoryContainer = React.createClass({
+var ChatsContainer = React.createClass({
   render: function() {
-    var stories1 = [];
-    var stories2 = [];
-    var stories3 = [];
-    var stories4 = [];
+    var chats = [];
+      
+   dbchats = this.props.aaa;    
 
-    var db = this.props.db();    
-    var db2 = this.props.db2();    
-    var db3 = this.props.db3();    
-    var db4 = this.props.db4();    
+    this._getStory(dbchats, chats);
 
-    this._getStory(db, stories1);
-    this._getStory(db2, stories2);
-    this._getStory(db3, stories3);
-    this._getStory(db4, stories4);
-
-  
     return (
       <div>
-      <ReactSwipe continuous={false}>
-        {stories1}
-      </ReactSwipe>
-      <ReactSwipe continuous={false}>
-        {stories2}
-      </ReactSwipe>
-      <ReactSwipe continuous={false}>
-        {stories3}
-      </ReactSwipe>
-      <ReactSwipe continuous={false}>
-        {stories4}
-      </ReactSwipe>
+        {chats}
       </div>
     );
   },
@@ -85,4 +64,4 @@ var StoryContainer = React.createClass({
   }
 });
 
-module.exports = StoryContainer;
+module.exports = ChatsContainer;

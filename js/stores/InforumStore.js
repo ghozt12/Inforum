@@ -18,6 +18,7 @@ var bookmarkCount = 0;
 var bookmarks = {};
 var userName;
 var userImg;
+var showSocialVal = false;
 /* Catogories are 
 1: Enviroment
 2: Sport
@@ -110,15 +111,303 @@ var _DB = {
 };
 
 
+
+var _DB2 = {
+  1: {
+    'key': 5,
+    'title': 'If the US proceeds with its proposed Freedom of Navigation operation, this will more than likely be the first in a number of encounters between rival powers in one of the worlds growing hotspots.',
+    'votes': 23,
+    'cat': 'SC',
+    'catNum': 1,
+    'commentnum': 22,
+    'author': 'Tina',
+    'time': '10:20:20',
+    'url': 'ABC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  2: {
+    'key': 6,
+    'title': 'Google is throwing its might into a project to slow the ageing process, and researchers think it could be possible for humans to live until were 1,000. But many philosophers and ethicists arent so keen on the idea.',
+    'votes': 22,
+    'commentnum': 544,
+    'cat': 'SC',
+    'catNum': 1,
+    'author': 'Bec C',
+    'time': '10:20:20',
+    'url': 'NEWS.com.au',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  3: {
+    'key': 7,
+    'title': '​While the production of fossil fuels drops in the United States, solar and wind power is skyrocketing as technology and cheaper financing drive down the costs.',
+    'votes': 51,
+    'cat': 'SC',
+    'catNum': 1,
+    'commentnum': 24,
+    'author': 'Rachel',
+    'time': '10:20:20',
+    'url': 'ABC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+    4: {
+    'key': 8,
+    'title': 'In considering the public costs of alcohol, the current "nanny state" inquiry needs to look past inflated dollar figures.',    'votes': 54,
+    'cat': 'SC',
+    'votes': 51,
+    'catNum': 1,
+    'commentnum': 22,
+    'author': 'Sherwina',
+    'time': '10:20:20',
+    'url': 'BBC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    }
+};
+
+var _DB3 = {
+  1: {
+    'key': 9,
+    'title': 'Rugby league legend Hazem El-Masri has been charged with serious domestic violence offences following an incident at his western Sydney home.',
+        'votes': 23,
+    'cat': 'SP',
+    'catNum': 2,
+    'commentnum': 22,
+    'author': 'Sherwin',
+    'time': '10:20:20',
+    'url': 'ABC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  2: {
+    'key': 10,
+    'title': 'Google is throwing its might into a project to slow the ageing process, and researchers think it could be possible for humans to live until were 1,000. But many philosophers and ethicists arent so keen on the idea.',
+    'votes': 22,
+    'commentnum': 544,
+    'cat': 'SP',
+    'catNum': 2,
+    'author': 'Chamath',
+    'time': '10:20:20',
+    'url': 'NEWS.com.au',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  3: {
+    'key': 11,
+    'title': 'League: Outgoing NRL CEO Dave Smith has refuted suggestions he was told to stand down from his position, saying the decision was entirely his.',    'votes': 51,
+    'cat': 'SP',
+    'votes': 22,
+    'catNum': 2,
+    'commentnum': 24,
+    'author': 'Racket',
+    'time': '10:20:20',
+    'url': 'ABC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+    4: {
+    'key': 12,
+    'title': 'A review committee has found South African referee Craig Joubert should not have awarded the last minute penalty that secured Australia victory over Scotland in their World Cup quarter-final on the weekend.',
+    'cat': 'SP',
+    'votes': 51,
+    'catNum': 2,
+    'commentnum': 22,
+    'author': 'Char Math',
+    'time': '10:20:20',
+    'url': 'BBC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    }
+};
+
+
+var _DB4 = {
+  1: {
+    'key': 92,
+    'title': 'Oprah Winfrey will buy a 10 per cent stake in Weight Watchers, adding her celebrity and consumer appeal to a diet brand that has been shedding subscribers.',        'votes': 23,
+    'cat': 'BU',
+    'catNum': 3,
+    'commentnum': 22,
+    'author': 'Sherwin',
+    'time': '10:20:20',
+    'url': 'ABC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  2: {
+    'key': 102,
+    'title': 'Google is throwing its might into a project to slow the ageing process, and researchers think it could be possible for humans to live until were 1,000. But many philosophers and ethicists arent so keen on the idea.',
+    'votes': 22,
+    'commentnum': 544,
+    'cat': 'BU',
+    'catNum': 3,
+    'author': 'Chamath',
+    'time': '10:20:20',
+    'url': 'NEWS.com.au',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  3: {
+    'key': 112,
+    'title': 'Banks exposure to property developers and investors remained the biggest single risk to Australias financial system, according to the minutes of the RBAs October meeting.',
+    'cat': 'BU',
+    'votes': 22,
+    'catNum': 3,
+    'commentnum': 24,
+    'author': 'Racket',
+    'time': '10:20:20',
+    'url': 'ABC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+    4: {
+    'key': 122,
+    'title': ' junior Deutsche Bank forex worker mistakenly wired $8.3 billion to the wrong client in June. The money was recovered a day later.',
+    'cat': 'BU',
+    'votes': 51,
+    'catNum': 3,
+    'commentnum': 22,
+    'author': 'Char Math',
+    'time': '10:20:20',
+    'url': 'BBC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    }
+};
 // Get the correct database
 
+
+
+var _TopChats = {
+  1: {
+    'key': 00001,
+    'title': 'The Baird government has raised its energy savings goal 70 per cent by 2020 in a bid to limit rising electricity and gas bills, and save an extra 730,000 tonnes of carbon emission annually by the end of the decade',
+    'votes': 203,
+    'cat': 'BU',
+    'catNum': 3,
+    'commentnum': 555,
+    'author': 'Bec A',
+    'time': '10:20:20',
+    'url': 'ABC',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  2: {
+    'key': 00002,
+    'title': 'National pledges to cut greenhouse gas emissions, even if fully implemented, would cap global warming at 3 degrees Celsius rather than the 2 degrees targeted to avoid dangerous consequences, the European Commission said',
+    'votes': 334,
+    'commentnum': 544,
+    'cat': 'EV',
+    'catNum': 0,
+    'author': 'Bec B',
+    'time': '10:20:20',
+    'url': 'FOX News',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+  3: {
+    'key': 00003,
+    'title': '​While the production of fossil fuels drops in the United States, solar and wind power is skyrocketing as technology and cheaper financing drive down the costs.',
+    'votes': 41,
+    'cat': 'SC',
+    'catNum': 1,
+    'commentnum': 223,
+    'author': 'Bec C',
+    'time': '10:20:20',
+    'url': 'SMH',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    },
+    4: {
+    'key': 00004,
+    'title': 'Fewer tropical cyclones are expected in Australia between the November-April cyclone season as a result of this years powerful El Nino in the Pacific.',
+    'votes': 54,
+    'cat': 'SP',
+    'catNum': 2,
+    'commentnum': 123,
+    'author': 'Bec D',
+    'time': '10:20:20',
+    'url': 'SMH',
+    'comments': {
+      1: "I wish i was using this",
+      2: "This is interesting",
+      3: "Third comment",
+      4: "hello"
+    },
+    }
+};
+
+
+function showSocial(val) {
+  showSocialVal = val;
+}
 
 
 /* ********************************
   FUNCTIONS from ACTIONS
 ******************************** */
-
-
 function pushCat(val) {
   catSelected = val;
 }
@@ -212,7 +501,9 @@ function createStory(title, text, tags, link) {
 
 var InforumStore = assign({}, EventEmitter.prototype, {
 
-
+  getSocial: function() {
+    return showSocialVal;
+  },
   getName: function() {
     return userName;
   },
@@ -221,6 +512,18 @@ var InforumStore = assign({}, EventEmitter.prototype, {
   },
   getEnviroment: function() {
     return _DB;
+  },
+  getScience: function() {
+    return _DB2;
+  },
+  getSport: function() {
+    return _DB3;
+  },
+  getBusiness: function() {
+    return _DB4;
+  },
+  getChats: function() {
+    return _TopChats;
   },
 
   getBookmarks: function() {
@@ -316,6 +619,10 @@ AppDispatcher.register(function(action) {
       break;
     case Constants.PUSH_BOOKMARK:
       saveBookmark(action.text);
+      InforumStore.emitChange();
+      break;
+    case Constants.SHOWSOCIAL:
+      showSocial(action.text);
       InforumStore.emitChange();
       break;
       

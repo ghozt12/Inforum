@@ -1,0 +1,36 @@
+.activity-element {
+  background: #2F2F2F;
+  height: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+
+  p {
+    color: #6F6B6A;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 15px;
+
+    b {
+      color: #D8D6D6;
+    }
+  }
+
+  i {
+    float: right;
+    display: inline-block;
+    color: #6F6B6A;
+    margin-right: 5px;
+    margin-top: 15px;
+  }
+}
+
+
+.activity-element.open {
+  border-left: 4px solid red;
+}

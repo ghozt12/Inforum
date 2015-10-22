@@ -10,24 +10,43 @@
 **************************** */
 /* Top Level React Component */
 var React = require('react');
+
 // Flux
 var Actions = require('../../actions/Actions');
+var Nav = require('../Profile/Nav.react');
 
 /* ****************************
   React
 **************************** */
 var User = React.createClass({
+
+
+  getInitialState: function() {
+    return {
+      followed: false
+    }
+  },
  
   /* *****************
     Rendering 
   ****************** */
   render: function() {
 
-    var img = this.props.img();
+    if (this.props.fake) {
+      var img = this.props.img;
+      var man = (this.state.followed ? 'follow follewed' : 'follow');
+      var follow = <div onClick={this._followed} className={man}><p>Follow</p></div>
+    } else {
+      var img = this.props.img();
+      var follow = null;
+    }
 
     return (
-     <div className="profile-cont">
+      <div>
+      <div className="profile-cont">
+
       <img src={img} /> 
+      {follow}
 
       <div> 
         <ul>
@@ -44,7 +63,24 @@ var User = React.createClass({
 
      </div>
 
+     <div>
+      
+     </div>
+
+
+     </div>
+
+
+
+
     );
+  },
+
+
+  _followed: function() {
+    this.setState({
+      followed: !this.state.followed 
+    });
   }
 
 });

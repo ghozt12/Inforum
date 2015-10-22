@@ -18,10 +18,18 @@ var Sidemenu = require('./Sidemenu.react');
 // Navigation
 var Nav = require('./Nav.react');
 
+// Routing
+var Router = require('react-router-component');
+var RouteHandler = Router.RouteHandler;
+var Link = Router.Link;
+var Navigatable = require('react-router-component').NavigatableMixin;
+
+
 /* ****************************
   React
 **************************** */
 var Header = React.createClass({
+  mixins: [ Navigatable ],
 
   /* *****************
     State 
@@ -38,6 +46,10 @@ var Header = React.createClass({
   ****************** */
   _handleLogo: function(event) {
 
+  },
+  
+  _handleArrow: function(event) {
+    this.navigate('/catogories');
   },
 
   _handleClick: function(event) {
@@ -61,7 +73,7 @@ var Header = React.createClass({
     var colouredHeader = (this.props.isColoured ? "top-bar coloured" : "top-bar");
 
     var menu = (this.state.menu ? '' : 'flipper');
-    var nav = <Nav preMenu={this.props.preMenu} curMenu={this.props.curMenu}/>;
+    var nav = <Nav preMenu={this.props.preMenu} curMenu={this.props.curMenu} />;
     var ham = <div onClick={this._handleClick} id="menu" className={menu}>
         <span></span>
         <span></span>

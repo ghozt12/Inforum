@@ -47,6 +47,22 @@ var Actions = {
     });
   },
 
+  pushProfileMenu: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.PUSH_PROFILE_MENU,
+      text: val
+    });
+  },
+
+  pushPrevProfileMenu: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.PUSH_PRE_PROFILE_MENU,
+      text: val
+    });
+  },
+
+
+
   showSearch: function(val) {
     AppDispatcher.dispatch({
       actionType: Constants.SET_SEARCH_VISIBILITY,

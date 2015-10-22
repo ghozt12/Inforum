@@ -11,7 +11,7 @@ var SigninEmail = require('./components/SigninEmail.page');
 var SigninFB = require('./components/SigninFB.page');
 var Catogories = require('./components/Pages/Categories.page');
 var Profile = require('./components/Pages/Profile.page');
-
+var FakeProfile = require('./components/Pages/FakeProfile.page');
 
 // FLux
 var InforumStore = require('./stores/InforumStore');
@@ -106,6 +106,13 @@ var App = React.createClass({
   _getSocial: function() {
     return InforumStore.getSocial();
   },
+  _getCurProfileMenu: function() {
+    return InforumStore.getCurProfileMenu();
+  },
+
+  _getPreProfileMenu: function() {
+    return InforumStore.getPreProfileMenu();
+  },
 
   render: function() {
 
@@ -129,6 +136,11 @@ var App = React.createClass({
     var DBBusiness = this._getBusiness;
     var DBChats = this._getChats();
     var Bookmarks = this._getBookmarks;
+
+    // Profile menu
+    var getCurProfileMenu = this._getCurProfileMenu;
+    var getPreProfileMenu = this._getPreProfileMenu;
+
 
     return (
     <AnimatedLocations hash className="Main" transitionName="moveUp" popStateTransitionName="fade">
@@ -164,11 +176,29 @@ var App = React.createClass({
         dbChats={DBChats} 
 
         db_bm={Bookmarks} 
-        preMenu={preMenu} 
-        curMenu={curMenu} 
+        preMenu={getPreProfileMenu} 
+        curMenu={getCurProfileMenu} 
         search={searchVisibility} 
 
         handler={Profile} />
+
+        <Location path="/fakeprofile"
+        name={name}
+        img={img}
+        social={social}
+
+        db1={DBenviroment} 
+        db2={DBScience} 
+        db3={DBSport} 
+        db4={DBBusiness} 
+        dbChats={DBChats} 
+
+        db_bm={Bookmarks} 
+        preMenu={getPreProfileMenu} 
+        curMenu={getCurProfileMenu} 
+        search={searchVisibility} 
+
+        handler={FakeProfile} />
 
      </AnimatedLocations>    
      );

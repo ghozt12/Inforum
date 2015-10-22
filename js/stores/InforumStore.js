@@ -19,6 +19,9 @@ var bookmarks = {};
 var userName;
 var userImg;
 var showSocialVal = false;
+
+var curProfileMenu = 0;
+var preProfileMenu = 0;
 /* Catogories are 
 1: Enviroment
 2: Sport
@@ -441,6 +444,14 @@ function pushMenu(val) {
   curMenu = val;
 }
 
+function setProfileMenu(val) {
+  curProfileMenu = val;
+}
+
+function setPreProfileMenu(val) {
+  preProfileMenu = val;
+}
+
 function pushPreMenu(val) {
   preMenu = val;
 }
@@ -534,6 +545,14 @@ var InforumStore = assign({}, EventEmitter.prototype, {
     return searchVisibility;
   },
 
+  getCurProfileMenu: function() {
+    return curProfileMenu;
+  },
+
+  getPreProfileMenu: function() {
+    return preProfileMenu;
+  },
+
   getCurMenu: function() {
     return curMenu;
   },
@@ -623,6 +642,14 @@ AppDispatcher.register(function(action) {
       break;
     case Constants.SHOWSOCIAL:
       showSocial(action.text);
+      InforumStore.emitChange();
+      break;
+    case Constants.PUSH_PROFILE_MENU:
+      setProfileMenu(action.text);
+      InforumStore.emitChange();
+      break;
+    case Constants.PUSH_PRE_PROFILE_MENU:
+      setPreProfileMenu(action.text);
       InforumStore.emitChange();
       break;
       

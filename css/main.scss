@@ -57,6 +57,16 @@ Imported SASS style sheets
 @import 'sass/story'; 
 @import 'sass/social'; 
 @import 'sass/profile'; 
+@import 'sass/activity'; 
+
+@mixin noselect {
+	-webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 
 html, body {
@@ -255,4 +265,26 @@ Text
 
 .side-menu.show {
 	-webkit-transform: translate3d(0px, 0, 0);
+}
+
+
+.follow {
+	position: absolute;
+	text-align: center;
+	width: 70px;
+	background: $blue;
+	height: 30px;
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
+	left: 10px;
+	top: 150px;
+	@include noselect;
+	cursor: pointer;
+	p {
+		margin-top: 7px;
+	}
+	.follewed {
+		background: $green;
+	}
 }

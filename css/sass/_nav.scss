@@ -65,3 +65,71 @@ nav li {
 .nav-bottom.nav4 {
   margin-left: 75%;
 }
+
+
+
+/* ************************
+  Navigation  2 
+  w slider
+************************ */
+
+.nav-profile {
+  width: 100%;
+  text-align: center;
+  color: #ABABAB;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  padding-top: 20px;
+  background: #344D62;
+  padding-bottom: 5px;
+}
+
+.nav-profile li {
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: -0.4px;
+  width: 33%;
+  list-style-type: none;
+  display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+  text-align: center;
+
+}
+
+.selected-nav {
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.nav2-bottom {
+  height: 5px;
+  background: $blue;
+  width: 33%;
+  margin-left: 5px;
+  transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+}
+
+.nav2-bottom.nav1 {
+  margin-left: 0%;
+}
+.nav2-bottom.nav2 {
+  margin-left: 33%;
+}
+.nav2-bottom.nav3 {
+  margin-left: 66%;
+}
+

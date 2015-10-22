@@ -12,6 +12,9 @@ var SigninFB = require('./components/SigninFB.page');
 var Catogories = require('./components/Pages/Categories.page');
 var Profile = require('./components/Pages/Profile.page');
 var FakeProfile = require('./components/Pages/FakeProfile.page');
+var Search = require('./components/Pages/Search.page');
+var Enviroment = require('./components/Pages/Enviroment.page');
+var Comments = require('./components/Pages/Comments.page');
 
 // FLux
 var InforumStore = require('./stores/InforumStore');
@@ -113,6 +116,17 @@ var App = React.createClass({
   _getPreProfileMenu: function() {
     return InforumStore.getPreProfileMenu();
   },
+  _getCurCatMenu: function() {
+    return InforumStore.getCurCatMenu();
+  },
+
+  _getPreCatMenu: function() {
+    return InforumStore.getPreCatMenu();
+  },
+
+  _getEnvChats: function() {
+    return InforumStore.getEnvCat();
+  },
 
   render: function() {
 
@@ -141,6 +155,13 @@ var App = React.createClass({
     var getCurProfileMenu = this._getCurProfileMenu;
     var getPreProfileMenu = this._getPreProfileMenu;
 
+
+    // Cat menu
+    var getCurCatMenu = this._getCurCatMenu;
+    var getPreCatMenu = this._getPreCatMenu;
+
+    // DB chats for enviroment
+    var getEnvchats = this._getEnvChats;
 
     return (
     <AnimatedLocations hash className="Main" transitionName="moveUp" popStateTransitionName="fade">
@@ -199,6 +220,62 @@ var App = React.createClass({
         search={searchVisibility} 
 
         handler={FakeProfile} />
+
+         <Location path="/search" 
+          name={name}
+          img={img}
+          social={social}
+
+          db1={DBenviroment} 
+          db2={DBScience} 
+          db3={DBSport} 
+          db4={DBBusiness} 
+          dbChats={DBChats} 
+
+          db_bm={Bookmarks} 
+          preMenu={preMenu} 
+          curMenu={curMenu} 
+          search={searchVisibility} 
+
+         handler={Search} />
+
+        <Location path="/enviroment" 
+          name={name}
+          img={img}
+          social={social}
+
+          db1={DBenviroment} 
+          db2={DBScience} 
+          db3={DBSport} 
+          db4={DBBusiness} 
+          dbChats={DBChats} 
+
+          db_bm={Bookmarks} 
+          preMenu={getPreCatMenu} 
+          curMenu={getCurCatMenu} 
+          search={searchVisibility} 
+          env={getEnvchats}
+
+         handler={Enviroment} />
+
+          <Location path="/comments" 
+          name={name}
+          img={img}
+          social={social}
+
+          db1={DBenviroment} 
+          db2={DBScience} 
+          db3={DBSport} 
+          db4={DBBusiness} 
+          dbChats={DBChats} 
+
+          db_bm={Bookmarks} 
+          preMenu={getPreCatMenu} 
+          curMenu={getCurCatMenu} 
+          search={searchVisibility} 
+          env={getEnvchats}
+
+         handler={Comments} />
 
      </AnimatedLocations>    
      );

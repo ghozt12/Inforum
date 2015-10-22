@@ -14,5 +14,7 @@ module.exports = keyMirror({
   CREATE_STORY: null,
   SHOWSOCIAL: null,
   PUSH_PRE_PROFILE_MENU: null,
-  PUSH_PROFILE_MENU: null
+  PUSH_PROFILE_MENU: null,
+  PUSH_PRE_CAT_MENU: null,
+  PUSH_CAT_MENU: null
 });

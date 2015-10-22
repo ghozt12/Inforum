@@ -61,6 +61,20 @@ var Actions = {
     });
   },
 
+  pushCatMenu: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.PUSH_CAT_MENU,
+      text: val
+    });
+  },
+
+  pushCatPreMenu: function(val) {
+    AppDispatcher.dispatch({
+      actionType: Constants.PUSH_PRE_CAT_MENU,
+      text: val
+    });
+  },
+
 
 
   showSearch: function(val) {

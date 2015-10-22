@@ -13,13 +13,13 @@ var React = require('react');
 var Actions = require('../../actions/Actions');
 
 var Bookmark = require('./Bookmark.react');
-var Bottom = require('./Bottom.react');
+var CommentBottom = require('./CommentBottom.react');
 var Social = require('./Social.react');
 
 /* ****************************
   React
 **************************** */
-var Storyelement = React.createClass({
+var CommentElement = React.createClass({
   
   getInitialState: function() {
     return {
@@ -29,19 +29,21 @@ var Storyelement = React.createClass({
   },
 
   render: function() {
+
+    var sty = (this.props.isSec ? 'element comment2' : 'element comment')
+    
     return (
-      <div onClick={this._touchStart} onTouchStart={this._touchStart} onTouchEnd={this._touchend} className='element'>
+      <div onClick={this._touchStart} onTouchStart={this._touchStart} onTouchEnd={this._touchend} className={sty}>
         <Social catNum={this.props.catNum} visible={this.state.visible} />
-        <Bookmark _handleBookmark={this._handleBookmark} catNum={this.props.catNum} bookmarked={this.props.bookmarked} />
         <p onTouchStart={this._close}>{this.props.story}</p>
-        <Bottom 
+        <CommentBottom 
           catNum={this.props.catNum}
           cat={this.props.cat}
           author={this.props.author}
           source={this.props.source}
           comments={this.props.comments}
           votes ={this.props.votes}
-          openComment={this._handleComment}
+          comment={this._comment}
           />
       </div>
     );
@@ -85,8 +87,8 @@ var Storyelement = React.createClass({
     });
   },
 
-  _handleComment: function() {
-    this.props.openComment(this.props.number);
+  _comment: function() {
+    this.props.comment();
   },
 
   _handleBookmark: function(bm) {
@@ -109,4 +111,4 @@ var Storyelement = React.createClass({
   }
 });
 
-module.exports = Storyelement;
+module.exports = CommentElement;

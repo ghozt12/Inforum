@@ -59,10 +59,7 @@ var Header = React.createClass({
   },
 
   _handleSearch: function() {
-    Actions.showSearch(!this.state.visible);
-    this.setState({
-      visible: !this.state.visible 
-    });
+    this.navigate('/search');
   },
 
   /* *****************
@@ -71,7 +68,8 @@ var Header = React.createClass({
   render: function() {
 
     var colouredHeader = (this.props.isColoured ? "top-bar coloured" : "top-bar");
-
+    if (this.props.isEnv)
+      colouredHeader = "top-bar envir-color";
     var menu = (this.state.menu ? '' : 'flipper');
     var nav = <Nav preMenu={this.props.preMenu} curMenu={this.props.curMenu} />;
     var ham = <div onClick={this._handleClick} id="menu" className={menu}>
@@ -95,9 +93,8 @@ var Header = React.createClass({
         <div className="top-bar">
           {isDot}
           {hamburger}
-
+          
           <h1 onClick={this._handleLogo}>{this.props.titleName}</h1>
-
           <i onClick={this._handleSearch} className="fa fa-search"></i>
         
           {isNav}

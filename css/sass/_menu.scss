@@ -30,6 +30,40 @@
   }
 } 
 
+.reddot2 {
+  border-radius: 50%;
+  background-color: red;
+  height: 15px;
+  width: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  position: relative;
+  left: 75px;
+  top: 10px;
+  p {
+    margin-top: 1px;
+  }
+} 
+
+.reddot3 {
+  border-radius: 50%;
+  background-color: red;
+  height: 15px;
+  width: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  position: relative;
+  left: 280px;
+  top: -30px;
+  p {
+    margin-top: 1px;
+  }
+} 
+
 #menu span {
   position: absolute;
   background-color: white;

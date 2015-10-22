@@ -42,22 +42,28 @@ var Sidemenu = React.createClass({
         <h2> {name} </h2>
       </div>
         <ul>
-          <li>Home</li>
-          <li>#hashtags</li>
-          <li>Publications</li>
+          <li onClick={this._handleClick3}>Home</li>
+          <li onClick={this._handleClick}>#hashtags</li>
+          <li onClick={this._handleClick}>Publications</li>
+          <div className="reddot2"><p>1</p></div>
           <li onClick={this._handleClick} >Profile Stats</li>
-          <li>Draft Stories</li>
-          <li>Help</li>
-          <li>Settings</li>
-          <li>Logout</li>
+          <li onClick={this._handleClick}>Draft Stories</li>
+          <li onClick={this._handleClick}>Help</li>
+          <li onClick={this._handleClick}>Settings</li>
+          <li onClick={this._handleClick2}>Logout</li>
         </ul>
       </div>
     );
   },
 
   _handleClick: function() {
-    alert(1);
     this.navigate('/profile');
+  },
+  _handleClick3: function() {
+    this.navigate('/catogories');
+  },
+  _handleClick2: function() {
+    this.navigate('/');
   }
 });
 

@@ -133,3 +133,65 @@ nav li {
   margin-left: 66%;
 }
 
+
+/* ************************
+  Navigation  3
+  w slider
+************************ */
+
+.nav-profile2 {
+  width: 100%;
+  text-align: center;
+  color: #ABABAB;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  padding-top: 20px;
+  background: $red;
+  padding-bottom: 5px;
+}
+
+.nav-profile2 li {
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: -0.4px;
+  width: 50%;
+  list-style-type: none;
+  display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+  text-align: center;
+}
+
+.selected-nav {
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.nav3-bottom {
+  height: 5px;
+  background: white;
+  width: 50%;
+  margin-left: 5px;
+  transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+}
+
+.nav3-bottom.nav1 {
+  margin-left: 0%;
+}
+.nav3-bottom.nav2 {
+  margin-left: 50%;
+}
+

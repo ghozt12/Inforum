@@ -16,7 +16,7 @@ var BottomCat = require('./BottomCat.react');
 /* ****************************
   React
 **************************** */
-var Bottom = React.createClass({
+var CommentBottom = React.createClass({
 
   getInitialState: function() {
     return {
@@ -47,7 +47,7 @@ var Bottom = React.createClass({
       <div className='bottom-bar'>
         {showRespect}
         <BottomCat catNum={this.props.catNum} cat={this.props.cat} />
-        <p className={style}> {this.props.author} <b> shares from </b> {this.props.source}
+        <p className={style}> 
         <i onClick={this._comment} className="fa fa-comment">{this.props.comments}</i>
         <i onClick={this._respect} className="fa fa-thumbs-up">{this.state.votes}</i>
         </p>
@@ -64,7 +64,7 @@ var Bottom = React.createClass({
   },
 
   _comment: function() {
-    this.props.openComment();
+    this.props.comment();
   },
 
   _changeState: function() {
@@ -74,4 +74,4 @@ var Bottom = React.createClass({
   }
 });
 
-module.exports = Bottom;
+module.exports = CommentBottom;

@@ -34,8 +34,9 @@ var User = React.createClass({
 
     if (this.props.fake) {
       var img = this.props.img;
-      var man = (this.state.followed ? 'follow follewed' : 'follow');
-      var follow = <div onClick={this._followed} className={man}><p>Follow</p></div>
+      var man = (this.state.followed ? 'follow followed' : 'follow');
+      var txt = (this.state.followed ? 'Followed' : 'Follow');
+      var follow = <div onClick={this._followed} className={man}><p>{txt}</p></div>
     } else {
       var img = this.props.img();
       var follow = null;

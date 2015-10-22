@@ -1,5 +1,5 @@
 /* ****************************
-  Profile Navigation menu  2 
+  CATOGORY Navigation two sided
   react
 
   Respect Crew
@@ -16,7 +16,7 @@ var Navigatable = require('react-router-component').NavigatableMixin
 var Actions = require('../../actions/Actions');
 
 // Pages
-var NavBottom = require('./NavBottom.react');
+var CatNavBottom = require('./CatNavBottom.react');
 
 /* ****************************
   React
@@ -28,8 +28,8 @@ var Nav = React.createClass({
     Functions 
   ****************** */
   _handleClick: function(i) {
-    Actions.pushPrevProfileMenu(this.props.curMenu());
-    Actions.pushProfileMenu(i);
+    Actions.pushCatPreMenu(this.props.curMenu());
+    Actions.pushCatMenu(i);
   },
 
   /* *****************
@@ -37,9 +37,9 @@ var Nav = React.createClass({
   ****************** */
   render: function() {
     var navEl = [];
-    var names = ['Posts', 'Discussions', 'Activity']; 
-    
-    for (var i = 0; i < 3; i++) {
+    var names = ['Top Stories', 'Top Discussions']; 
+
+    for (var i = 0; i < 2; i++) {
       if (i == this.props.curMenu())
         navEl.push( <li onClick={this._handleClick.bind(null, i)} className="selected-nav">{names[i]}</li>);
       else
@@ -48,12 +48,10 @@ var Nav = React.createClass({
 
     return (
       <div>
-        <div className="nav-profile">
+        <div className="nav-profile2">
           {navEl}
-          <div className="reddot3"><p>1</p></div>
-
         </div>
-        <NavBottom preMenu={this.props.preMenu} curMenu={this.props.curMenu} />
+        <CatNavBottom preMenu={this.props.preMenu} curMenu={this.props.curMenu} />
       </div>
     );
   }
